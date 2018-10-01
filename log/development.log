@@ -1,0 +1,94 @@
+  [1m[35m (529.4ms)[0m  [1m[35mCREATE DATABASE "capture-jobs-api-streamlined_development" ENCODING = 'unicode'[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (470.2ms)[0m  [1m[35mCREATE DATABASE "capture-jobs-api-streamlined_test" ENCODING = 'unicode'[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (26.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (12.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6652709940108019620)[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+Migrating to CreateBookmarks (20180902225349)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (28.6ms)[0m  [1m[35mCREATE TABLE "bookmarks" ("id" bigserial primary key, "title" character varying, "source_name" character varying, "summary" text, "url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180902225349_create_bookmarks.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902225349"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+Migrating to CreateCompanies (20180902225651)
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (22.0ms)[0m  [1m[35mCREATE TABLE "companies" ("id" bigserial primary key, "name" character varying, "size" character varying, "location" character varying, "description" character varying, "museId" character varying, "twitter" character varying, "image_link" character varying, "image_link2" character varying, "image_mini" character varying, "company_logo" character varying, "industry" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180902225651_create_companies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902225651"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+Migrating to CreateJobs (20180902230358)
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (25.3ms)[0m  [1m[35mCREATE TABLE "jobs" ("id" bigserial primary key, "title" character varying, "date_published" timestamp, "contents" text, "museId" integer, "location" character varying, "level" character varying, "category" character varying, "date_saved" timestamp, "overall_active_status" boolean, "date_applied" timestamp, "application_response_status" character varying, "interview_invite" character varying, "offer_status" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180902230358_create_jobs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902230358"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+Migrating to CreateNotes (20180902230421)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "notes" ("id" bigserial primary key, "title" character varying, "content" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180902230421_create_notes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902230421"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+Migrating to CreateUsers (20180902230453)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180902230453_create_users.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902230453"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+Migrating to CreateInterviews (20180902230715)
+  [1m[35m (11.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "interviews" ("id" bigserial primary key, "type" character varying, "contact" character varying, "date_invited" timestamp, "date_due" timestamp, "next_step" character varying, "response" character varying, "additional_notes" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180902230715_create_interviews.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180902230715"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (6.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (5.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-09-02 23:13:05.993129"], ["updated_at", "2018-09-02 23:13:05.993129"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6652709940108019620)[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (52.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (27.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (697.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "capture-jobs-api-streamlined_development"[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
+  [1m[35m (465.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "capture-jobs-api-streamlined_test"[0m
+  ↳ /Users/siobhanpmahoney/.rvm/gems/ruby-2.3.5/bin/rake:23
