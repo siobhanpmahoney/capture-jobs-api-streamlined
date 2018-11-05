@@ -48,8 +48,10 @@ ActiveRecord::Schema.define(version: 2018_09_02_230715) do
     t.string "next_step"
     t.string "response"
     t.string "additional_notes"
+    t.bigint "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_interviews_on_job_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -66,15 +68,21 @@ ActiveRecord::Schema.define(version: 2018_09_02_230715) do
     t.string "application_response_status"
     t.string "interview_invite"
     t.string "offer_status"
+    t.bigint "user_id"
+    t.bigint "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_jobs_on_company_id"
+    t.index ["user_id"], name: "index_jobs_on_user_id"
   end
 
   create_table "notes", force: :cascade do |t|
     t.string "title"
     t.string "content"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_notes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
